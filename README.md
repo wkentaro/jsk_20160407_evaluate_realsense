@@ -2,7 +2,7 @@
 
 ## RealSense 001
 
-<img src="_images/001_realsense.jpg" width="50%" />
+<img src="_images/001_realsense.jpg" width="30%" />
 
 ### Specs
 
@@ -31,18 +31,18 @@
 
 *setup*
 
-<img src="_images/001_setup.jpg" width="50%" />
+<img src="_images/001_setup.jpg" width="30%" />
 
 *Plane Estimation*
 
 -   Movie: https://drive.google.com/open?id=0B9P1L--7Wd2veWxHZVB0dUF0UTg
 
-<img src="_images/001_plane_estimation.jpg" width="50%" />
+<img src="_images/001_plane_estimation.jpg" width="30%" />
 
 
 ## Real Sense 002
 
-<img src="_images/002_realsense.jpg" width="50%" />
+<img src="_images/002_realsense.jpg" width="30%" />
 
 ### Specs
 
@@ -52,10 +52,10 @@
 
 *setup*
 
-<img src="_images/002_setup.jpg" width="50%" />
+<img src="_images/002_setup.jpg" width="30%" />
 
 *View*
 
 - Movie: https://drive.google.com/open?id=0B9P1L--7Wd2vX0JIeHU5UFlwTWM
 
-<img src="_images/002_view.jpg" width="50%" />
+<img src="_images/002_view.jpg" width="30%" />
