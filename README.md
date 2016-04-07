@@ -1,4 +1,6 @@
-# RealSense
+# RealSense 001
+
+<img src="_images/001_realsense.jpg" width="50%" />
 
 ## Specs
 
