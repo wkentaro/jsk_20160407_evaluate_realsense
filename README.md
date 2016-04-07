@@ -31,6 +31,6 @@
 
 ### Plane Estimation
 
--   https://drive.google.com/uc?id=0B9P1L--7Wd2vZU9QWG5oT3ZSWHc
+-   Movie: https://drive.google.com/open?id=0B9P1L--7Wd2veWxHZVB0dUF0UTg
 
 <img src="_images/001_plane_estimation.jpg" width="50%" />
