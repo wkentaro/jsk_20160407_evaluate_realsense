@@ -1,8 +1,6 @@
-jsk\_20160407\_evaluate\_realsense
-==================================
+# RealSense
 
-RealSense
----------
+## Specs
 
 ### ROS Topics
 
@@ -24,6 +22,12 @@ RealSense
 
 -   depthとcolor画像の大きさが違う
 -   depth\_registeredメッセージが出ない
+
+## Experiment
+
+### Setup
+
+<img src="_images/001_setup.jpg" width="50%" />
 
 ### Plane Estimation
 
