@@ -1,0 +1,72 @@
+<launch>
+
+  <node name="rosbag_play"
+        pkg="rosbag" type="play"
+        args="$(find jsk_20160407_evaluate_realsense)/data/001.bag --loop" />
+
+  <arg name="MANAGER" value="evaluation_nodelet_manager" />
+  <node name="$(arg MANAGER)"
+        pkg="nodelet" type="nodelet" args="manager" />
+
+  <!-- Rectify
+  <node name="rectify_color"
+        pkg="nodelet" type="nodelet"
+        args="standalone image_proc/rectify $(arg MANAGER)">
+    <remap from="camera_info" to="/camera/rgb/camera_info" />
+    <remap from="image_mono" to="/camera/rgb/image_color" />
+    <remap from="image_rect" to="/camera/rgb/image_rect_color" />
+  </node>
+  <node name="rectify_depth"
+        pkg="nodelet" type="nodelet"
+        args="load image_proc/rectify $(arg MANAGER)">
+    <remap from="camera_info" to="/camera/depth/camera_info" />
+    <remap from="image_mono" to="/camera/depth/image" />
+    <remap from="image_rect" to="/camera/depth/image_rect" />
+  </node>
+  -->
+<!-- Playback
+  <node name="relay_color"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_topic_tools/Relay $(arg MANAGER)">
+    <remap from="~input" to="/camera/rgb/image_color" />
+    <remap from="~output" to="/camera/rgb/image_raw" />
+  </node>
+  <node name="relay_depth"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_topic_tools/Relay $(arg MANAGER)">
+    <remap from="~input" to="/camera/depth/image" />
+    <remap from="~output" to="/camera/depth/image_raw" />
+  </node>
+
+  <include file="$(find openni_launch)/launch/openni.launch">
+    <arg name="load_driver" value="false" />
+    <arg name="publish_tf" value="false" />
+  </include>
+-->
+
+  <node name="multi_plane_estimate"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/OrganizedMultiPlaneSegmentation $(arg MANAGER)">
+    <remap from="~input" to="/camera/depth/points" />
+    <rosparam>
+      max_curvature: 0.01
+      estimate_normal: true
+    </rosparam>
+  </node>
+
+<!--
+  <node name="euclid_clustering"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/EuclideanClustering $(arg MANAGER)">
+    <remap from="~input" to="/camera/depth/points" />
+  </node>
+
+  <node name="cpi_decomposer"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/ClusterPointIndicesDecomposer $(arg MANAGER)">
+    <remap from="~input" to="/camera/depth/points" />
+    <remap from="~target" to="euclid_clustering/output" />
+  </node>
+-->
+
+</launch>
