@@ -24,8 +24,8 @@
 
 ### Issues
 
--   depthとcolor画像の大きさが違う
 -   depth\_registeredメッセージが出ない
+-   50cmというのが少しギリギリ
 
 ### Experiment
 
@@ -59,6 +59,27 @@
 ### Specs
 
 - 15cm以上離れている必要あり
+
+- depth image: `/softkinetic_camera/depth/image_raw`
+
+  - height: 240
+  - width: 320
+  - encoding: 32FC1
+
+- color image `/softkinetic_camera/rgb/image_color`
+
+  - height: 720
+  - width: 1280
+  - encoding: bgr8
+
+- points xyzrgb `/softkinetic_camera/depth/points`
+
+  - height: 1
+  - width: 12674
+
+### Issues:
+
+- pointsがNot Organized.
 
 ### Experiment
 
